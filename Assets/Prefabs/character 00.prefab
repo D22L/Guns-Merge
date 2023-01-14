@@ -2927,6 +2927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField: {fileID: 4953628767314772517}
   _animController: {fileID: 4953628767314772538}
+  _gunController: {fileID: 1958936891}
 --- !u!114 &4953628767314772538
 MonoBehaviour:
   m_ObjectHideFlags: 0

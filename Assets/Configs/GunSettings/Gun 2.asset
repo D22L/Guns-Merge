@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Gun 2
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 1
+  <Price>k__BackingField: 300
   <Damage>k__BackingField: 15
   <ShootDelay>k__BackingField: 0.9
   <BulletPfb>k__BackingField: {fileID: 4028437893959441801, guid: 4b8f38d5400048f4fbb9cc7432fdb8c2, type: 3}
   <BulletSpeed>k__BackingField: 1000
+  <GunSprite>k__BackingField: {fileID: 21300000, guid: 8c31e4f21494a5c4e9edadffa5e5b058, type: 3}

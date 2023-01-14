@@ -30,7 +30,8 @@ namespace GunsMerge
             if (_enemyDetector.VisibleEnemies.Count > 0) Aim();
 
             if (_currentTarget == null || _currentTarget.isDead) return;
-           
+
+            Debug.Log(_delay);
             _delay += Time.deltaTime;
             if (_delay >= _gunController.CurrentGun.settings.ShootDelay)
             {

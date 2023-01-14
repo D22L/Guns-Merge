@@ -1,4 +1,4 @@
-using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,11 +26,13 @@ namespace GunsMerge
             this.Subscribe(eEventType.HeroInPosition, OnHeroInPosistion);
         }
 
-
         private void OnHeroInPosistion(object arg0)
-        {            
-            var lastChunk = _chunks[_chunks.Count - 1];
-            _chunks[_indexCurrentChunk-1].transform.position = lastChunk.transform.position + Vector3.forward * _padding;
+        {
+
+            var sortedChunks = _chunks.OrderBy(x => x.transform.position.z);
+            var lastChunk = sortedChunks.Last();
+            var firstChunk = sortedChunks.First();
+            firstChunk.transform.position = lastChunk.transform.position + Vector3.forward * _padding;
         }
 
         private void OnDisable()
@@ -38,8 +40,9 @@ namespace GunsMerge
             this.Unsubscribe(eEventType.HeroInPosition, OnHeroInPosistion);
         }
         public EnvChunk GetNextChunk()
-        {            
-            _indexCurrentChunk = (++_indexCurrentChunk) % _chunks.Count;
+        {
+            _indexCurrentChunk++;
+            _indexCurrentChunk = _indexCurrentChunk % _chunks.Count;
             return _chunks[_indexCurrentChunk];
         }
 

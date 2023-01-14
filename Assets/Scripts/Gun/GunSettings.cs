@@ -8,9 +8,11 @@ namespace GunsMerge
     public class GunSettings : ScriptableObject
     {
         [field: SerializeField] public int ID { get; private set; }
+        [field: SerializeField] public int Price { get; private set; }
         [field: SerializeField] public int Damage { get; private set; }
         [field: SerializeField] public float ShootDelay { get; private set; }
         [field: SerializeField] public Bullet BulletPfb { get; private set; }
         [field: SerializeField] public float BulletSpeed { get; private set; }
+        [field: SerializeField] public Sprite GunSprite { get; private set; }
 }
 }

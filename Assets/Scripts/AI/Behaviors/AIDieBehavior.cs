@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using Zenject;
 
 namespace GunsMerge
 {
@@ -8,11 +9,21 @@ namespace GunsMerge
     {
         [SerializeField] private HealthComponent _healthComponent;
         [SerializeField] private Collider _collider;
+        [Inject] private Wallet _wallet;
+        private EnemyBase _enemyBase;
+        private bool _used;
+        private void Awake()
+        {
+            _enemyBase = GetComponent<EnemyBase>();
+        }
         public override void Behave()
         {
+            if (_used) return;
+            _wallet.AddCoin(_enemyBase.EnemySettings.RewardSize);
             _collider.enabled = false;
             PlayAnim();
             StartCoroutine(HideBody());
+            _used = true;
         }
 
         private IEnumerator HideBody()

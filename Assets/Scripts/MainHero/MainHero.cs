@@ -8,7 +8,9 @@ namespace GunsMerge
     {
         [field: SerializeField] public HealthComponent Health { get; private set; }
         [SerializeField] private HeroAnimController _animController;
+        [SerializeField] private GunController _gunController;
 
+        public Gun CurrentGun => _gunController.CurrentGun;
         private void OnEnable()
         {
             Health.onHealthZero += Health_onHealthZero;            

@@ -16,3 +16,4 @@ MonoBehaviour:
   <AttackDistance>k__BackingField: 0.7
   <AttackPower>k__BackingField: 5
   <MaxHealth>k__BackingField: 20
+  <RewardSize>k__BackingField: 100

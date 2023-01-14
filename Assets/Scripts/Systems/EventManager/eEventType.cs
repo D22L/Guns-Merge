@@ -2,11 +2,13 @@ namespace GunsMerge
 {
     public enum eEventType
     {
-       GameStart,
-        NewGunMerged,
+       GameStart,        
         EnemyOnBecameVisible,
         EnemyWaveCreated,
         EnemyWaveEnded,
-        HeroInPosition
+        HeroInPosition,
+        CellAsTargetMarked,
+        ChangeActiveCell,
+        GunMerged
     }
 }

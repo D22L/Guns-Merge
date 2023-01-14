@@ -10,5 +10,6 @@ namespace GunsMerge
         [field: SerializeField] public float AttackDistance { get; private set; }
         [field: SerializeField] public float AttackPower { get; private set; }
         [field: SerializeField] public int MaxHealth { get; private set; }
+        [field: SerializeField] public int RewardSize { get; private set; }
     }
 }
