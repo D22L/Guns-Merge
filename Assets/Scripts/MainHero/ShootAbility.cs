@@ -11,6 +11,8 @@ namespace GunsMerge
         [SerializeField] private GunController _gunController;
         [SerializeField] private EnemyDetector _enemyDetector;
         [SerializeField] private HeroAnimController _heroAnimController;
+        [SerializeField] private HealthComponent _healthComponent;
+
         private EnemyBase _currentTarget;
         private float _delay;
         private bool _concentrationState;
@@ -47,6 +49,8 @@ namespace GunsMerge
 
         private void Update()
         {
+            if (_healthComponent.CurrentValue == 0) return;
+
             _maxDelay = _gunController.CurrentGun.settings.ShootDelay;
             CheckConcentrationState();
 

@@ -7,6 +7,7 @@ namespace GunsMerge
     public class Bullet : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rb;
+        [SerializeField] private Collider _collider;
         
         private int _damage;
         public void SetDamage(int damageSize)
@@ -28,6 +29,7 @@ namespace GunsMerge
         {
             if (collision.gameObject.TryGetComponent(out EnemyBase enemy))
             {
+                _collider.enabled = false;
                 enemy.TakeDamage(_damage);
                 Destroy(gameObject);
             }

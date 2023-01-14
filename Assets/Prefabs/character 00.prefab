@@ -2976,6 +2976,7 @@ MonoBehaviour:
   _gunController: {fileID: 1958936891}
   _enemyDetector: {fileID: 5382496918152083623}
   _heroAnimController: {fileID: 4953628767314772538}
+  _healthComponent: {fileID: 4953628767314772517}
 --- !u!114 &1958936891
 MonoBehaviour:
   m_ObjectHideFlags: 0
