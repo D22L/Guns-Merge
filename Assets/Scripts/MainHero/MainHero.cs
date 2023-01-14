@@ -11,7 +11,7 @@ namespace GunsMerge
 
         private void OnEnable()
         {
-            Health.onHealthZero += Health_onHealthZero;
+            Health.onHealthZero += Health_onHealthZero;            
         }
 
         private void Health_onHealthZero()

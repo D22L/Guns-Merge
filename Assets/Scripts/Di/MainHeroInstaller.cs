@@ -13,7 +13,8 @@ public class MainHeroInstaller : MonoInstaller
 
     private MainHero SpawnHero()
     {
-        var hero = Instantiate(_mainHeroPFB);
+        var heroObj = Container.InstantiatePrefab(_mainHeroPFB);
+        var hero = heroObj.GetComponent<MainHero>();
         hero.transform.position = _heroStartPoint.position;
         return hero;
     }

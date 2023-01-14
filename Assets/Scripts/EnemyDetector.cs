@@ -32,12 +32,15 @@ namespace GunsMerge
         }
         private void Update()
         {
+            VisibleEnemies = new List<EnemyBase>();
             for (int i = 0; i < _enemyWave.PooledEnemies.Count; i++)
-            {
+            {                
                 var enemy = _enemyWave.PooledEnemies[i];
-                if (!VisibleEnemies.Contains(enemy) && IsTargetVisible(_camera, enemy.gameObject))
+                if (enemy == null || enemy.isDead) continue;               
+
+                if (IsTargetVisible(_camera, enemy.gameObject))
                 {
-                    VisibleEnemies.Add(enemy);
+                    VisibleEnemies.Add(enemy);                    
                 }
             }    
         }

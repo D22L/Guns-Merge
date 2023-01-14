@@ -10,26 +10,12 @@ namespace GunsMerge
         [SerializeField] protected HealthComponent _healthComponent;
         [SerializeField] protected BaseEnemySettings _enemySettings;
 
-        public Action onDie;
+        public HealthComponent Health => _healthComponent;
+        public bool isDead => _healthComponent.CurrentValue == 0;
         public BaseEnemySettings EnemySettings => _enemySettings;
         private void Awake()
         {
             _healthComponent.SetMaxHealth(_enemySettings.MaxHealth);
-        }
-
-        private void OnEnable()
-        {
-            _healthComponent.onHealthZero += _healthComponent_onHealthZero;
-        }
-
-        private void _healthComponent_onHealthZero()
-        {
-            onDie?.Invoke();
-        }
-
-        private void OnDisable()
-        {
-            _healthComponent.onHealthZero -= _healthComponent_onHealthZero;
         }
 
         public void TakeDamage(float damageSize)

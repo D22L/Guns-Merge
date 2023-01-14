@@ -14,8 +14,9 @@ namespace GunsMerge
         public void Idle() => _animator.CrossFade(_idleAnimName, 0.01f);
         public void Walk() => _animator.CrossFade(_walkAnimName, 0.01f);
         public void Shoot()
-        {
+        {            
             _animator.Play(_shootAnimName);
+            
         }
         public void Die() => _animator.CrossFade(_dieAnimName, 0.01f);
     }

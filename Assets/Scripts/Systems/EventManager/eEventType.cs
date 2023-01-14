@@ -5,6 +5,8 @@ namespace GunsMerge
        GameStart,
         NewGunMerged,
         EnemyOnBecameVisible,
-        EnemyWaveCreated
+        EnemyWaveCreated,
+        EnemyWaveEnded,
+        HeroInPosition
     }
 }
