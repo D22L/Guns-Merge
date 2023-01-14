@@ -11,6 +11,7 @@ namespace GunsMerge
         [SerializeField] private Image _healthProgressView;
         [SerializeField] private GameObject _healthbar;
         [SerializeField] private int _maxHealth;
+        [SerializeField] private DamageInfoPanel _damageInfo;
 
         public event Action onHealthZero;
         private float _currentHealth;
@@ -32,6 +33,7 @@ namespace GunsMerge
             _currentHealth -= damage;
             _currentHealth = Mathf.Clamp(_currentHealth,0, _maxHealth);
             _healthProgressView.fillAmount = _currentHealth / _maxHealth;
+            _damageInfo.ShowDamageInfo(damage);
             if (_currentHealth == 0)
             {
                 _healthbar.SetActive(false);
