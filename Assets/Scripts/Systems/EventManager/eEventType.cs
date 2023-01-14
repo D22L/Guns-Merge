@@ -9,6 +9,7 @@ namespace GunsMerge
         HeroInPosition,
         CellAsTargetMarked,
         ChangeActiveCell,
-        GunMerged
+        GunMerged,
+        ConcetrationShootingRequest
     }
 }

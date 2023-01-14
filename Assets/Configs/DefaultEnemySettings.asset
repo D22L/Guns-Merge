@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cc982bfd6917746889c9f4334f100e, type: 3}
   m_Name: DefaultEnemySettings
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 0.1
+  <MoveSpeed>k__BackingField: 0.15
   <AttackDistance>k__BackingField: 0.7
   <AttackPower>k__BackingField: 5
   <MaxHealth>k__BackingField: 20

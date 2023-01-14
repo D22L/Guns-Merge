@@ -19,5 +19,7 @@ namespace GunsMerge
             
         }
         public void Die() => _animator.CrossFade(_dieAnimName, 0.01f);
+
+        public void SetSpeed(float speed) => _animator.speed = speed;
     }
 }
